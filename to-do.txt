@@ -1,0 +1,32 @@
+These are the three main actors of the program:
+
+Admin:
+He can add, remove or edit courses.
+He can view all courses.
+
+He can add, remove or edit offerings. (while assigning each one to a specific instructor)
+He can view all offerings.
+
+He can add, remove or edit students
+He can view all students.
+
+He can add, remove or edit instructors
+He can view all instructors.
+
+
+Student:
+He logs in using his id.
+
+He can view all his registered courses also he can register or unregister at any course he wants to.
+He can see his specific course grade or all the gpa.
+
+He can always edit his info.
+
+Instructor:
+He logs in using his id.
+
+He can view all his assigned courses.
+He can view all his students in a specific course.
+He can edit students grades in a specific course. (note that the software should update the student GPA automatically)
+
+He can always edit his info.

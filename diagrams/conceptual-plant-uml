@@ -1,0 +1,44 @@
+@startchen
+entity INSTRUCTOR {
+  instructor_id <<key>>
+  name
+  email
+  phone
+}
+entity STUDENT {
+  student_id <<key>>
+  name
+  email
+  phone
+  gpa
+}
+entity COURSE {
+  course_id <<key>>
+  name
+  category
+  credits
+}
+entity COURSE_OFFERING {
+  offering_id <<key>>
+  semester
+  year
+}
+
+relationship OFFERS {
+}
+relationship TEACHES {
+}
+relationship ENROLLS {
+  grade
+}
+
+COURSE -(0,N)- OFFERS
+OFFERS -(1,1)- COURSE_OFFERING
+
+INSTRUCTOR -(0,N)- TEACHES
+TEACHES -(1,1)- COURSE_OFFERING
+
+STUDENT -(0,N)- ENROLLS
+ENROLLS -(0,N)- COURSE_OFFERING
+
+@endchen

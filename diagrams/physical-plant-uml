@@ -1,0 +1,52 @@
+@startuml
+
+hide circle
+
+
+entity "Instructor" as Instructor {
+  + instructor_id : INT
+  --
+  name : VARCHAR(100)
+  email : VARCHAR(100)
+  phone : VARCHAR(15)
+}
+
+entity "Course" as Course {
+  + course_id : INT 
+  --
+  name : VARCHAR(100)
+  category : VARCHAR(50)
+  credits : INT
+}
+
+entity "CourseOffering" as CourseOffering {
+  + offering_id : INT
+  --
+  course_id : INT
+  instructor_id : INT
+  semester : VARCHAR(10)
+  year : INT
+}
+
+entity "Student" as Student {
+  + student_id : INT
+  --
+  name : VARCHAR(100)
+  email : VARCHAR(100)
+  phone : VARCHAR(15)
+  gpa : DECIMAL(5,2)
+}
+
+entity "Enrollment" as Enrollment {
+  + student_id : INT
+  + offering_id : INT
+  --
+  grade : DECIMAL(5,2)
+}
+
+Instructor ||--o{ CourseOffering : "teaches"
+Course ||--o{ CourseOffering : "offers"
+Student ||--o{ Enrollment : "enrolls"
+CourseOffering ||--o{ Enrollment : "includes"
+
+@enduml
