@@ -51,7 +51,7 @@ else:
     id = menu.ask_for_id()
     
     # go implement this menu at Menu class then comeback here!
-    choice = menu.run_student_menu()
+    # choice = menu.run_student_menu()
 
 # def main_menu():
 #     while True:
