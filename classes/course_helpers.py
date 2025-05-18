@@ -1,4 +1,4 @@
-from database import Database
+from classes.database import Database
 
 def add_course(database):
     """ """

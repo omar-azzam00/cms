@@ -1,13 +1,13 @@
 from classes.database import Database
 from classes.menu import Menu
-
 from classes.course_helpers import add_course
 from classes.instructor_helper import add_instructor
-database = Database()
 
+database = Database()
 menu = Menu()
 
-choice = menu.askUserType()
+print("\n")
+choice = menu.ask_user_type()
 
 if choice == 1:
     choice = menu.run_admin_menu()
