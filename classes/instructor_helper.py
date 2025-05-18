@@ -1,7 +1,6 @@
-from db import db_modify_query_execute, db_query_execute
+from database import Database
 
-
-def add_instructor():
+def add_instructor(database):
     name = ""
     email = ""
     phone = ""
@@ -15,7 +14,7 @@ def add_instructor():
         phone = input("Enter the instructor phone: ")
 
     count_query = """SELECT COUNT(*) FROM Instructor;"""
-    instructors_count = db_query_execute(count_query)
+    instructors_count = database.query_execute(count_query)
 
     id = instructors_count.fetchone()[0] + 1
 
@@ -24,7 +23,7 @@ def add_instructor():
     ({id}, '{name}', '{email}', '{phone}');
     """
 
-    db_modify_query_execute(insert_query)
+    database.modify_query_execute(insert_query)
 
     print(f"Instructor {name} added successfully!")
 

@@ -1,7 +1,6 @@
-from db import db_modify_query_execute, db_query_execute
+from database import Database
 
-
-def add_course():
+def add_course(database):
     """ """
     # Ask the user to enter the course data (id, name, category, credits)
     name = ""
@@ -28,7 +27,7 @@ def add_course():
 
     count_query = """SELECT COUNT(*) FROM Course;"""
 
-    courses_count = db_query_execute(count_query)
+    courses_count = database.query_execute(count_query)
 
     id = courses_count.fetchone()[0] + 1
     print(f"New course id: {id}")
@@ -38,7 +37,7 @@ def add_course():
     ({id}, '{name}', '{category}', {hours}, {instructor_id});
     """
 
-    db_modify_query_execute(insert_query)
+    database.modify_query_execute(insert_query)
 
     print(f"Course {name} added successfully!")
 
